@@ -1,0 +1,94 @@
+<div class="dashboard-container">
+  <h2>Bienvenido</h2>
+
+  <div class="card-grid">
+    <button (click)="mostrarVista('perfil')">👤 Perfil de Usuario</button>
+    <button (click)="mostrarVista('equipo')"> Equipo</button>
+       <button (click)="mostrarVista('datos')">💾 Datos de Almacenamiento</button>
+        <button (click)="mostrarVista('alertas')">🔔 Alertas</button>
+    <button (click)="mostrarVista('informes')">📄 Generar Informes</button>
+    
+  </div>
+
+  <!-- Vista Perfil -->
+  <div class="contenido-dinamico" *ngIf="vistaSeleccionada === 'perfil'">
+    <app-perfil></app-perfil>
+    <div style="text-align: right; margin-top: 10px;">
+      <button (click)="cerrarVista()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Vista Alertas -->
+  <div class="contenido-dinamico" *ngIf="vistaSeleccionada === 'alertas'">
+    <h3>🔔 Alertas</h3>
+    <p>Aquí irían las alertas configuradas para el sistema.</p>
+    <div style="text-align: right; margin-top: 10px;">
+      <button (click)="cerrarVista()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Vista Datos de Almacenamiento -->
+  <div class="contenido-dinamico" *ngIf="vistaSeleccionada === 'datos'">
+    <h3>💾 Datos de Almacenamiento</h3>
+    <p>Detalles sobre el uso de almacenamiento y bases de datos.</p>
+    <div style="text-align: right; margin-top: 10px;">
+      <button (click)="cerrarVista()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Vista Informes -->
+  <div class="contenido-dinamico" *ngIf="vistaSeleccionada === 'informes'">
+    <h3>📄 Generar Informes</h3>
+    <p>Sección para exportar datos y generar reportes.</p>
+    <div style="text-align: right; margin-top: 10px;">
+      <button (click)="cerrarVista()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Vista Equipo (Registro y Lista) -->
+  <div class="contenido-dinamico" *ngIf="vistaSeleccionada === 'equipo'">
+    <h2>🔌 Registro de Microgeneradores</h2>
+
+    <form (ngSubmit)="registrarEquipo()" #form="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre del equipo</label>
+        <input id="nombre" name="nombre" ngModel required />
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo de microgenerador</label>
+        <input id="tipo" name="tipo" ngModel required />
+      </div>
+
+      <div class="form-group">
+        <label for="capacidad">Capacidad (kW)</label>
+        <input id="capacidad" name="capacidad" type="number" ngModel required />
+      </div>
+
+      <div class="acciones">
+        <button type="submit">Registrar equipo</button>
+        <button type="button" (click)="cerrarVista()">Cerrar</button>
+      </div>
+    </form>
+
+    <h3 style="margin-top: 30px;">📄 Equipos registrados</h3>
+    <table *ngIf="equipos.length > 0" style="width: 100%; margin-top: 10px;">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Capacidad (kW)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let eq of equipos">
+          <td>{{ eq.nombre }}</td>
+          <td>{{ eq.tipo }}</td>
+          <td>{{ eq.capacidad }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="equipos.length === 0">NO TIENES REGISTRADO NINGÚN MICROGENERADOR</p>
+  </div>
+</div>

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #2c3e50, #3498db); /* 💫 Fondo igual al resto */
+  color: #ffffff;
+}
+
+/* Contenedor principal del dashboard */
+.dashboard-container {
+  text-align: center;
+  padding: 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-top: 30px;
+}
+
+
+.card-grid button {
+  padding: 16px;
+  font-size: 1rem;
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card-grid button:hover {
+  background-color: #5346c7;
+  box-shadow: 0 0 10px #6c5ce7;
+}
+
+/* Contenedor para el contenido desplegable con efecto glassmorphism */
+.contenido-dinamico {
+  margin-top: 40px;
+  padding: 30px 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  color: #e0e0e0;
+  text-align: left;
+}
+
+/* Títulos del contenido */
+.contenido-dinamico h2, 
+.contenido-dinamico h3 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 24px;
+}
+
+/* Formularios reutilizables */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #ccc;
+}
+
+.form-group input {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.08);
+  color: #fff;
+}
+
+.form-group input:focus {
+  border-color: #6cbee4;
+  outline: none;
+}
+
+/* Botones dentro de contenido dinámico */
+.acciones {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.acciones button {
+  flex: 1;
+  padding: 10px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #00bcd4;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,188,212,0.3);
+  transition: background-color 0.3s ease;
+}
+
+.acciones button:hover {
+  background-color: #0097a7;
+}
+
+/* Botones con iconos */
+button.btn {
+  width: 180px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6c5ce7;
+  border-radius: 10px;
+}
+
+button.btn i {
+  margin-right: 8px;
+}
+html, body {
+  height: 100%;
+}
+.dashboard-container {
+  min-height: 100vh;
+  background: linear-gradient(to right, #2c3e50, #3498db);
+}

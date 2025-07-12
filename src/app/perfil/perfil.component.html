@@ -1,0 +1,69 @@
+<div class="perfil-container">
+  <!-- Foto centrada con botón debajo -->
+  <div class="foto-superior">
+    <div class="avatar-wrapper">
+      <img
+        *ngIf="imagenPreview"
+        [src]="imagenPreview"
+        alt="Foto de perfil"
+        class="avatar-grande"
+      />
+      <div *ngIf="!imagenPreview" class="avatar-placeholder-grande">👤</div>
+
+      <div class="foto-label" *ngIf="modoEdicion">
+        <label class="texto-subir">
+          Subir nueva foto
+          <input type="file" (change)="onFotoSeleccionada($event)" />
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="titulo-seccion">Información Personal</h2>
+
+  <form [formGroup]="perfilForm">
+    <div class="fila-datos">
+      <div class="columna">
+        <div class="form-group">
+          <label for="id">ID de Usuario</label>
+          <input id="id" formControlName="id" readonly />
+
+        </div>
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" formControlName="nombre" />
+        </div>
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input id="email" formControlName="email" type="email" />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" formControlName="telefono" type="tel" />
+        </div>
+      </div>
+
+      <div class="columna">
+        <div class="form-group">
+          <label for="pais">País</label>
+          <input id="pais" formControlName="pais" />
+        </div>
+        <div class="form-group">
+          <label for="provincia">Provincia</label>
+          <input id="provincia" formControlName="provincia" />
+        </div>
+        <div class="form-group">
+          <label for="ciudad">Ciudad</label>
+          <input id="ciudad" formControlName="ciudad" />
+        </div>
+        <!-- Eliminado el duplicado anterior del botón de subir foto -->
+      </div>
+    </div>
+
+    <div class="acciones">
+      <button *ngIf="!modoEdicion" type="button" (click)="activarEdicion()">✏️ Editar</button>
+      <button *ngIf="modoEdicion" type="button" (click)="guardarCambios()">💾 Guardar</button>
+      <button *ngIf="modoEdicion" type="button" (click)="cancelar()">❌ Cancelar</button>
+    </div>
+  </form>
+</div>

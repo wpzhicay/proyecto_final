@@ -1,0 +1,30 @@
+<div class="info-panel-container">
+  <div class="panel-content">
+    <!-- Lado izquierdo: imagen redondeada -->
+    <div class="image-side">
+      <a routerLink="/login">
+        <img src="assets/LOGIN1.png" alt="Microgenerador Logo" class="login-image-rounded" />
+      </a>
+    </div>
+
+    <!-- Lado derecho: contenido gris claro + tarjetas + botón -->
+    <div class="intro-side">
+      <h2>¿Qué son los Microgeneradores de Agua?</h2>
+      <p>
+        Los microgeneradores hidráulicos en tuberías caseras son pequeñas turbinas instaladas en sistemas de agua domésticos que transforman el flujo de agua en energía eléctrica.
+      </p>
+      <p>
+        Esta tecnología permite generar electricidad de forma limpia y silenciosa, ideal para sensores o sistemas de monitoreo en hogares y zonas rurales.
+      </p>
+
+      <div class="cards" *ngIf="data.length > 0">
+        <div class="info-card" *ngFor="let item of data">
+          <h3>{{ item.label }}</h3>
+          <p>{{ item.value }}</p>
+        </div>
+      </div>
+
+      <button class="go-login-button" routerLink="/login">Iniciar Sesión</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.info-panel-container {
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(to right, #2c3e50, #3498db);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.panel-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  height: 600px; /* ✅ Aumentado desde una altura automática */
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.image-side {
+  background-color: #ffffff;
+  display: flex;
+  align-items: stretch; /* 👈 esto fuerza que el hijo llene toda la altura */
+  justify-content: center;
+  flex: 1;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  overflow: hidden;
+}
+
+.login-image-rounded {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+/* Contenedor gris derecho */
+.intro-side {
+  background: linear-gradient(to bottom right, #dfe6e9, #b2bec3);
+  flex: 1;
+  padding: 2rem;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  color: #2d3436;
+}
+
+.intro-side h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro-side p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Tarjetas más pequeñas en línea */
+.cards {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.info-card {
+  background: rgba(255,255,255,0.9);
+  padding: 1rem 1.2rem;
+  border-radius: 16px;
+  width: 160px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  color: #2c3e50;
+  text-align: center;
+}
+
+.info-card h3 {
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.info-card p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.go-login-button {
+  display: block;
+  margin: 5rem auto 0 auto; 
+  padding: 1rem 2rem;
+  background-color: #00bcd4;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 188, 212, 0.4);
+}
+
+
+.go-login-button:hover {
+  background-color: #0097a7;
+  box-shadow: 0 6px 18px rgba(0, 188, 212, 0.6);
+}
