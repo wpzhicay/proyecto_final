@@ -3,7 +3,8 @@
     <!-- Caja izquierda: Login -->
     <div class="login-box">
       <div class="logo-container">
-         </div>
+        <!-- Puedes agregar tu logo aquí -->
+      </div>
 
       <h2>Iniciar Sesión</h2>
 
@@ -42,13 +43,15 @@
         <img src="assets/google-icon.svg" alt="Google" />
         Entrar con Google
       </button>
+
+      <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
     </div>
 
     <!-- Caja derecha: decorativa o informativa -->
     <div class="login-box2">
-      <h2>¡NO TE UNAS AL CAMBIO SE EL CAMBIO!</h2>
-            <img src="assets/LOGIN1.png" alt="Bienvenida" style="width: 80%; margin-top: 1rem;" />
-            <p>¡CADA WATT CUENTA, CADA TURBINA IMPORTA!</p>
+      <h2>¡NO TE UNAS AL CAMBIO, SÉ EL CAMBIO!</h2>
+      <img src="assets/LOGIN1.png" alt="Bienvenida" style="width: 80%; margin-top: 1rem;" />
+      <p>¡CADA WATT CUENTA, CADA TURBINA IMPORTA!</p>
     </div>
   </div>
 </div>
